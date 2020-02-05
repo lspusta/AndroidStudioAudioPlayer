@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relLayoutAudioView"
+    tools:context=".MainActivity"
+    android:background="#1a1a1a">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_back_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:elevation="10dp"
+            app:backgroundTint="#424243"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@drawable/ic_arrow_down_white"/>
+
+
+        <ImageView
+            android:id="@+id/mentorImage"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="10dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/darthvador" />
+
+
+
+
+        <TextView
+            android:id="@+id/audioTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The Dark Side"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/mentorImage"/>
+
+
+        <TextView
+            android:id="@+id/mentorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Darth Vador"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:textColor="#ccc"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/audioTitle"/>
+
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/relLayoutBtn"
+        >
+
+
+        <TextView
+            android:id="@+id/remainingTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:text="-1:49" />
+
+
+        <TextView
+            android:id="@+id/elapsedTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:11"
+            android:textColor="#fff"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="15dp"/>
+
+        <SeekBar
+            android:id="@+id/positionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_centerInParent="true"
+
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayoutBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/bottomView"
+        android:layout_marginBottom="75dp">
+
+        <Button
+            android:id="@+id/playBtn"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            android:backgroundTint="#fff"
+            android:background="@drawable/ic_play"
+            android:layout_marginTop="40dp" />
+
+
+        <ImageView
+            android:id="@+id/fastForward"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/playBtn"
+            android:layout_marginLeft="20dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#fff"
+            android:background="@drawable/ic_forward10sec"/>
+
+        <ImageView
+            android:id="@+id/rewind"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/playBtn"
+            android:layout_marginRight="20dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#fff"
+            android:background="@drawable/ic_rewind10sec"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/bottomView"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/bottomButtons">
+
+            <ImageView
+                android:id="@+id/btnSound"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:visibility="invisible"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_volume_white"/>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnSoundFloating"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                app:backgroundTint="#424243"
+                app:srcCompat="@drawable/ic_volume_white"/>
+
+
+
+        </RelativeLayout>
+
+
+
+        <SeekBar
+            android:id="@+id/volumeBar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/bottomButtons"
+            android:outlineAmbientShadowColor="#fff"
+            android:layout_toLeftOf="@+id/btnSpeedFloating"
+            android:progress="50"
+            android:max="100"/>
+
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSpeed2Floating"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:backgroundTint="#424243"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_plus2_white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSpeedFloating"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:backgroundTint="#424243"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_speed_1"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
